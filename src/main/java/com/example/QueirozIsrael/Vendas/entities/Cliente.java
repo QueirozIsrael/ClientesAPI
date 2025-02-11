@@ -20,6 +20,6 @@ public class Cliente implements Serializable {
     @Column(nullable = false, length = 11)
     private String cpf;
 
-    @Column
+    @Column(name = "data_cadastro")
     private LocalDate dataCadastro;
 }
