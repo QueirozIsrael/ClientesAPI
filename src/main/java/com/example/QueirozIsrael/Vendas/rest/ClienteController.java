@@ -2,6 +2,7 @@ package com.example.QueirozIsrael.Vendas.rest;
 
 import com.example.QueirozIsrael.Vendas.entities.Cliente;
 import com.example.QueirozIsrael.Vendas.repositories.ClienteRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,7 @@ public class ClienteController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Cliente salvarCliente(@RequestBody Cliente cliente) {
+    public Cliente salvarCliente(@RequestBody @Valid Cliente cliente) {
         return repository.save(cliente);
     }
 
